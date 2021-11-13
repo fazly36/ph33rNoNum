@@ -9,7 +9,7 @@ Download the latest version using git and chnage the file permissions to execute
 git clone https://github.com/weaknetlabs/ph33rNoNum.git
 cd ph33rNoNum
 chmod +x ph33rNoNum.sh
-./ph33rNoNum.sh --num XXX-XXX-XXXX --csv
+./ph33rNoNum.sh --num XX-XX-XXXX-XXXX --csv
 ```
 ### CSV
 You can optionally add `--csv` to have a coimma separated value file created with the reposnes from the online resources.
@@ -17,7 +17,7 @@ You can optionally add `--csv` to have a coimma separated value file created wit
 ## OSINT Resources Consumed
 The following is a current list of all OSINT resources comsumed by this program. 
  * https://localcallingguide.com
- * https://www.telcodata.us
+ * http://numverify.com
  * https://www.cyberbackgroundchecks.com
  * https://zabasearch.com
  
