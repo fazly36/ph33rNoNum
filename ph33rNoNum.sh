@@ -29,7 +29,7 @@ PHONE="\U260E" # phone emoji
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0"
 
 function usage {
-  printf "\n -- Usage: ${GRN}${BOLD}./ph33rNoNum.sh ${RST}--num ${BOLD}XXX-XXX-XXXX${RST} (--csv)\n\n"
+  printf "\n -- Usage: ${GRN}${BOLD}./ph33rNoNum.sh ${RST}--num ${BOLD}XX-XX-XXXX-XXXX${RST} (--csv)\n\n"
   exit 1337 # done
 }
 export -f usage
