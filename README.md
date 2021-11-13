@@ -19,7 +19,7 @@ The following is a current list of all OSINT resources comsumed by this program.
  * https://localcallingguide.com
  * http://numverify.com
  * https://www.cyberbackgroundchecks.com
- * https://zabasearch.com
+ * https://hs3x.com
  
 ## Privacy
 This script is open sourced, check for yourself. There is no code that collects your input, but I am not responsible for the services consumed to gather the information - which just uses the NPA-EXC part of the phone number anyways. If you are really worried, try to simply input `NPA-EXC-0000` for instance: `412-885-0000` as per the exmaple from the screenshot above. 412-885-0075 is a cool test number that I found from the Tuxedo switch back in my phreaking days that still remains.
