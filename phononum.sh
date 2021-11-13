@@ -3,7 +3,7 @@
 # This script uses the following resources:
 #
 #   https://localcallingguide.com
-#   https://www.telcodata.us
+#   http://numverify.com
 #   https://www.cyberbackgroundchecks.com
 #   https://zabasearch.com
 #   https://truepeoplesearch.com
@@ -29,7 +29,7 @@ PHONE="\U260E" # phone emoji
 UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0"
 
 function usage {
-  printf "\n -- Usage: ${GRN}${BOLD}./ph33rNoNum.sh ${RST}--num ${BOLD}XXX-XXX-XXXX${RST} (--csv)\n\n"
+  printf "\n -- Usage: ${GRN}${BOLD}./ph33rNoNum.sh ${RST}--num ${BOLD}XX-XX-XXXX-XXXX${RST} (--csv)\n\n"
   exit 1337 # done
 }
 export -f usage
@@ -115,7 +115,7 @@ fi
 # Make second HTTP call if the CLLI is not NULL:
 if [[ "$OSWITCH" != "" ]]
 then
-  curl -s "https://www.telcodata.us/search-switches-by-clli-code?cllicode=$OSWITCH" > $OUTFILE
+  curl -s "http://numverify.com/search-switches-by-clli-code?cllicode=$OSWITCH" > $OUTFILE
   NAME=$(egrep -E 'class="results"' $OUTFILE |sed -r 's/(.\/td.)/\1\\\n/g'|egrep -E '^<'|sed -n '1p'|sed -r 's/.*>([^<]+)<.*/\1/')
   TYPE=$(egrep -E 'class="results"' $OUTFILE |sed -r 's/(.\/td.)/\1\\\n/g'|egrep -E '^<'|sed -n '2p'|sed -r 's/.*>([^<]+)<.*/\1/')
   STADDR=$(egrep -E 'class="results"' $OUTFILE |sed -r 's/(.\/td.)/\1\\\n/g'|egrep -E '^<'|sed -n '3p'|sed -r 's/.*>([^<]+)<.*/\1/')
@@ -142,7 +142,7 @@ fi
 # Make a third HTTP call if the
 # View Switch information by CLLI:
 curl -s --cookie "PHPSESSID=3290847239847293874423" -L \
- -A "${UA}" "https://www.telcodata.us/view-switch-detail-by-clli?clli=$OSWITCH" > $OUTFILE
+ -A "${UA}" "http://numverify.com/view-switch-detail-by-clli?clli=$OSWITCH" > $OUTFILE
 EXCHSERVD=$(egrep -E '^\s+<tr><th\s' $OUTFILE |grep 'Exchanges Served'|sed -r 's/[^0-9]//g')
 BUILDINGCLLI=$(egrep -E '^\s+<tr><th\s' $OUTFILE |grep 'Building CLLI'|sed -r 's/.*><td>([A-Z]+).*/\1/')
 # Build the Maps URI:
